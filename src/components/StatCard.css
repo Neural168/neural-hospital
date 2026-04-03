@@ -1,0 +1,101 @@
+.stat-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow behind cards based on type */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-teal {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--accent-teal);
+}
+
+.bg-red {
+  background: rgba(255, 59, 59, 0.1);
+  color: var(--accent-red);
+}
+
+.bg-yellow {
+  background: rgba(255, 193, 7, 0.1);
+  color: var(--accent-yellow);
+}
+
+.bg-default {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.trend {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.trend.up {
+  color: #4caf50;
+}
+
+.trend.down {
+  color: var(--accent-red);
+}
