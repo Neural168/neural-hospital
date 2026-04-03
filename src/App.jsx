@@ -29,7 +29,7 @@ function App() {
     if (!token) return;
     try {
       // Fetch Incidents
-      const incResponse = await fetch('http://localhost:5002/api/incidents', {
+      const incResponse = await fetch('https://neural-hospital.onrender.com/api/incidents', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (incResponse.ok) {
@@ -40,7 +40,7 @@ function App() {
       }
 
       // Fetch Staff
-      const staffResponse = await fetch('http://localhost:5002/api/staff', {
+      const staffResponse = await fetch('https://neural-hospital.onrender.com/api/staff', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (staffResponse.ok) {

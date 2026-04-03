@@ -414,7 +414,7 @@
         lng: selectedLng
       };
 
-      fetch('http://localhost:5002/api/incidents', {
+      fetch('https://neural-hospital.onrender.com/api/incidents', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

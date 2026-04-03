@@ -19,7 +19,7 @@ export default function StaffWidget({ token }) {
 
   const fetchStaff = async () => {
     try {
-      const response = await fetch('http://localhost:5002/api/staff', {
+      const response = await fetch('https://neural-hospital.onrender.com/api/staff', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (response.ok) {
@@ -41,8 +41,8 @@ export default function StaffWidget({ token }) {
     e.preventDefault();
     try {
       const url = isEditing && formData.id 
-        ? `http://localhost:5002/api/staff/${formData.id}`
-        : `http://localhost:5002/api/staff`;
+        ? `https://neural-hospital.onrender.com/api/staff/${formData.id}`
+        : `https://neural-hospital.onrender.com/api/staff`;
       
       const method = isEditing ? 'PUT' : 'POST';
 
@@ -120,7 +120,7 @@ export default function StaffWidget({ token }) {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to remove this member?')) return;
     try {
-      const response = await fetch(`http://localhost:5002/api/staff/${id}`, {
+      const response = await fetch(`https://neural-hospital.onrender.com/api/staff/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

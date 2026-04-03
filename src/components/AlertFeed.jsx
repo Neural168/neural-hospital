@@ -17,7 +17,7 @@ export default function AlertFeed({ alerts = [], token }) {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this incident?")) return;
     try {
-      await fetch(`http://localhost:5002/api/incidents/${id}`, { 
+      await fetch(`https://neural-hospital.onrender.com/api/incidents/${id}`, { 
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -33,7 +33,7 @@ export default function AlertFeed({ alerts = [], token }) {
 
   const handleSave = async (id) => {
     try {
-      await fetch(`http://localhost:5002/api/incidents/${id}`, {
+      await fetch(`https://neural-hospital.onrender.com/api/incidents/${id}`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
